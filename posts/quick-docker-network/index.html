@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="author" content="Stephane Busso">
+    <meta name="description" content="Stephane Busso&#39;s technical website">
+    <meta name="keywords" content="blog,developer,golang,ruby">
+
+    <base href="https://sbusso.github.io">
+    <title>
+  Quick Docker Network Playground · stephanebusso
+</title>
+
+    <link rel="canonical" href="https://sbusso.github.io/posts/quick-docker-network/">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Fira+Mono:400,700">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" integrity="sha256-oSrCnRYXvHG31SBifqP2PM1uje7SJUyX0nTwO2RJV54=" crossorigin="anonymous" />
+
+    
+      
+      
+      <link rel="stylesheet" href="https://sbusso.github.io/css/coder.min.5ba827d4defcdf49ead5c19f41e9c515d1657c08f4a1a0f411941e8dea44a014.css" integrity="sha256-W6gn1N7830nq1cGfQenFFdFlfAj0oaD0EZQejepEoBQ=" media="screen">
+    
+
+    
+      <link rel="stylesheet" href="https://sbusso.github.io/css/override.css">
+    
+      <link rel="stylesheet" href="https://sbusso.github.io/css/syntax.css">
+    
+
+    <link rel="icon" type="image/png" href="https://sbusso.github.io/images/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://sbusso.github.io/images/favicon-16x16.png" sizes="16x16">
+
+    
+
+    <meta name="generator" content="Hugo 0.47.1" />
+  </head>
+
+  <body>
+    <main class="wrapper">
+      
+<nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="https://sbusso.github.io">
+        &#x02234; stephanebusso &#x02234;
+    </a>
+    <input type="checkbox" id="menu-toggle" />
+    <label class="menu-button float-right" for="menu-toggle"><i class="fas fa-bars"></i></label>
+    <ul class="navigation-list">
+      
+      
+    </ul>
+  </section>
+</nav>
+
+
+      <div class="content">
+        
+  <section class="container post">
+  <article>
+    <header>
+      <h1 class="title">Quick Docker Network Playground</h1>
+      <h2 class="date">August 26, 2018</h2>
+
+      
+    </header>
+
+    <p>Quick experiment to tst Docker network option and golang network interfaces.</p>
+
+<p></p>
+
+<h2 id="code">Code</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kn">package</span> <span class="nx">main</span>
+
+<span class="kn">import</span> <span class="p">(</span>
+	<span class="s">&#34;log&#34;</span>
+	<span class="s">&#34;net&#34;</span>
+<span class="p">)</span>
+
+<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">ifs</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Interfaces</span><span class="p">()</span>
+	<span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&#34;Looking up ips...&#34;</span><span class="p">)</span>
+	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+		<span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+	<span class="p">}</span>
+
+	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ief</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">ifs</span> <span class="p">{</span>
+		<span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">ief</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
+		<span class="nx">addrs</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ief</span><span class="p">.</span><span class="nx">Addrs</span><span class="p">()</span>
+
+		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
+			<span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+		<span class="p">}</span>
+
+		<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">addr</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">addrs</span> <span class="p">{</span>
+			<span class="c1">// if addr.isLookback
+</span><span class="c1"></span>			<span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&#34;- &#34;</span> <span class="o">+</span> <span class="nx">addr</span><span class="p">.</span><span class="nx">String</span><span class="p">())</span>
+		<span class="p">}</span>
+	<span class="p">}</span>
+	<span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&#34;Done.&#34;</span><span class="p">)</span>
+<span class="p">}</span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Compile from MacOS</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">  <span class="nv">CGO_ENABLED</span><span class="o">=</span><span class="m">0</span> <span class="nv">GOOS</span><span class="o">=</span>linux <span class="nv">GOARCH</span><span class="o">=</span>amd64 go build -o lookup_ips_linux lookup_ips.go</code></pre></td></tr></table>
+</div>
+</div>
+<h2 id="simple-docker-image">Simple Docker Image</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile"><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-dockerfile" data-lang="dockerfile">  FROM scratch<span class="err">
+</span><span class="err"></span>  MAINTAINER Stephane Busso &lt;stephane.busso@gmail.com&gt;<span class="err">
+</span><span class="err"></span>  ADD lookup_ips_linux /lookup_ips<span class="err">
+</span><span class="err"></span>  ENTRYPOINT <span class="o">[</span><span class="s2">&#34;/lookup_ips&#34;</span><span class="o">]</span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">  docker build . -t lookup_ips</code></pre></td></tr></table>
+</div>
+</div>
+<p>## Run</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">  docker run -ti lookup_ip</code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>2018/08/26 19:10:16 Looking up ips&hellip;
+2018/08/26 19:10:16 127.0.0.<sup>1</sup>&frasl;<sub>8</sub>
+2018/08/26 19:10:16 172.17.0.<sup>2</sup>&frasl;<sub>16</sub>
+2018/08/26 19:10:16 Done.</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">docker run -ti --network host lookup_ips</code></pre></td></tr></table>
+</div>
+</div>
+<blockquote>
+<p>2018/08/26 19:10:42 Looking up ips&hellip;
+2018/08/26 19:10:42 127.0.0.<sup>1</sup>&frasl;<sub>8</sub>
+2018/08/26 19:10:42 ::<sup>1</sup>&frasl;<sub>128</sub>
+2018/08/26 19:10:42 10.0.2.<sup>15</sup>&frasl;<sub>24</sub>
+2018/08/26 19:10:42 fe80::a00:27ff:fe0c:10d/64
+2018/08/26 19:10:42 192.168.33.<sup>111</sup>&frasl;<sub>24</sub>
+2018/08/26 19:10:42 fe80::a00:27ff:fe29:b7bf/64
+2018/08/26 19:10:42 192.168.33.<sup>114</sup>&frasl;<sub>24</sub>
+2018/08/26 19:10:42 fe80::a00:27ff:fe82:13b7/64
+2018/08/26 19:10:42 192.168.33.<sup>112</sup>&frasl;<sub>24</sub>
+2018/08/26 19:10:42 fe80::a00:27ff:fe05:e62e/64
+2018/08/26 19:10:42 192.168.33.<sup>113</sup>&frasl;<sub>24</sub>
+2018/08/26 19:10:42 fe80::a00:27ff:fe02:ee7b/64
+2018/08/26 19:10:42 172.17.0.<sup>1</sup>&frasl;<sub>16</sub>
+2018/08/26 19:10:42 fe80::42:ecff:fed1:2bc7/64
+2018/08/26 19:10:42 Done.</p>
+</blockquote>
+
+<p>Voilà.</p>
+  </article>
+
+  <br/>
+
+  
+  
+</section>
+
+      </div>
+
+      <footer class="footer">
+  <section class="container">
+    
+      <p>Build. Measure. Learn.</p>
+    
+     © 2018    ·  Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>. 
+  </section>
+</footer>
+
+    </main>
+
+    
+
+  </body>
+
+</html>

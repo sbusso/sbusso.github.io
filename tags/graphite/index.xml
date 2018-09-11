@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Graphite on stephanebusso</title>
+    <link>https://sbusso.github.io/tags/graphite/</link>
+    <description>Recent content in Graphite on stephanebusso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 30 Aug 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://sbusso.github.io/tags/graphite/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Application Monitoring</title>
+      <link>https://sbusso.github.io/archives/2012/08/2012-08-30-application-monitoring/</link>
+      <pubDate>Thu, 30 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://sbusso.github.io/archives/2012/08/2012-08-30-application-monitoring/</guid>
+      <description>Importance of monitoring Many websites go production with only monitoring online availability, but how many monitor resources, services or application errors, and their trend? Things you should monitor:
+ infracstructure resources (cpu usage, memory usage, disk space / node, &amp;hellip;) services (database, mail server, application server, &amp;hellip;) application errors (server errors, caching errors, queries &amp;hellip;) user bahavior (how many attempt to log in, how long user stay on the site, &amp;hellip;)  It&amp;rsquo;s an important point for the quality of a business to monitor a maximum of data but also to keep the information concise with dashboards and alerts.</description>
+    </item>
+    
+  </channel>
+</rss>

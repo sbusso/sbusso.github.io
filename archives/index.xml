@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Archives on stephanebusso</title>
+    <link>https://sbusso.github.io/archives/</link>
+    <description>Recent content in Archives on stephanebusso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 31 Aug 2012 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://sbusso.github.io/archives/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>From monitoring to public status</title>
+      <link>https://sbusso.github.io/archives/2012/08/2012-08-31-from-monitoring-to-public-status/</link>
+      <pubDate>Fri, 31 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://sbusso.github.io/archives/2012/08/2012-08-31-from-monitoring-to-public-status/</guid>
+      <description>Completing the Monitoring Application post, some companies go a bit further, offering a public dashboard to their users to check the status of their services. So monitoring is not only about private information, it&amp;rsquo;s also about communication to your customers. Some examples: * Github * Disqus * heroku * Diablo III * AWS status * Google Apps * And finally an aggregator Api Status</description>
+    </item>
+    
+    <item>
+      <title>Application Monitoring</title>
+      <link>https://sbusso.github.io/archives/2012/08/2012-08-30-application-monitoring/</link>
+      <pubDate>Thu, 30 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://sbusso.github.io/archives/2012/08/2012-08-30-application-monitoring/</guid>
+      <description>Importance of monitoring Many websites go production with only monitoring online availability, but how many monitor resources, services or application errors, and their trend? Things you should monitor:
+ infracstructure resources (cpu usage, memory usage, disk space / node, &amp;hellip;) services (database, mail server, application server, &amp;hellip;) application errors (server errors, caching errors, queries &amp;hellip;) user bahavior (how many attempt to log in, how long user stay on the site, &amp;hellip;)  It&amp;rsquo;s an important point for the quality of a business to monitor a maximum of data but also to keep the information concise with dashboards and alerts.</description>
+    </item>
+    
+    <item>
+      <title>Twitter Bootstrap 2.1 on Rails</title>
+      <link>https://sbusso.github.io/archives/2012/08/2012-08-25-twitter-bootstrap-2-1/</link>
+      <pubDate>Sat, 25 Aug 2012 00:00:00 +0000</pubDate>
+      
+      <guid>https://sbusso.github.io/archives/2012/08/2012-08-25-twitter-bootstrap-2-1/</guid>
+      <description>So Twitter Bootstrap is out with new features as the new Affix side bar and so is twitter bootstrap rails gem. Using bootstrap sass, for more flexibility, I will need to wait a little bit.
+Pay attention on other changes as the default font size / line height.
+Don&amp;rsquo;t forget to use font awesome gem to replace defaults icons by a more flexible vecorial font system (easy to change size and color), no code change requirered.</description>
+    </item>
+    
+  </channel>
+</rss>

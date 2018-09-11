@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://sbusso.github.io/posts/quick-docker-network/</loc>
+    <lastmod>2018-08-26T21:20:33+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/posts/golang-network-interface/</loc>
+    <lastmod>2018-08-23T09:18:23+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/archives/2012/08/2012-08-31-from-monitoring-to-public-status/</loc>
+    <lastmod>2012-08-31T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/archives/2012/08/2012-08-30-application-monitoring/</loc>
+    <lastmod>2012-08-30T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/archives/2012/08/2012-08-25-twitter-bootstrap-2-1/</loc>
+    <lastmod>2012-08-25T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/about/</loc>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/archives/</loc>
+    <lastmod>2012-08-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/tags/golang/</loc>
+    <lastmod>2018-08-23T09:18:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/tags/graphite/</loc>
+    <lastmod>2012-08-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/tags/monitoring/</loc>
+    <lastmod>2012-08-31T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/tags/net/</loc>
+    <lastmod>2018-08-23T09:18:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/posts/</loc>
+    <lastmod>2018-08-26T21:20:33+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/tags/ruby/</loc>
+    <lastmod>2012-08-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/tags/statsd/</loc>
+    <lastmod>2012-08-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/tags/</loc>
+    <lastmod>2018-08-23T09:18:23+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://sbusso.github.io/</loc>
+    <lastmod>2018-08-26T21:20:33+02:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

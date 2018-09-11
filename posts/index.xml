@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on stephanebusso</title>
+    <link>https://sbusso.github.io/posts/</link>
+    <description>Recent content in Posts on stephanebusso</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 26 Aug 2018 21:20:33 +0200</lastBuildDate>
+    
+	<atom:link href="https://sbusso.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Quick Docker Network Playground</title>
+      <link>https://sbusso.github.io/posts/quick-docker-network/</link>
+      <pubDate>Sun, 26 Aug 2018 21:20:33 +0200</pubDate>
+      
+      <guid>https://sbusso.github.io/posts/quick-docker-network/</guid>
+      <description>&lt;p&gt;Quick experiment to tst Docker network option and golang network interfaces.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Choose Which Network Interface to Use</title>
+      <link>https://sbusso.github.io/posts/golang-network-interface/</link>
+      <pubDate>Thu, 23 Aug 2018 09:18:23 +0200</pubDate>
+      
+      <guid>https://sbusso.github.io/posts/golang-network-interface/</guid>
+      <description>&lt;p&gt;Cut out summary from your post content here.&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
