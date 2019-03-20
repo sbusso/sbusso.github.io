@@ -37,7 +37,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.47.1" />
+    <meta name="generator" content="Hugo 0.54.0" />
   </head>
 
   <body>
@@ -70,8 +70,6 @@
     </header>
 
     <p>Quick experiment to tst Docker network option and golang network interfaces.</p>
-
-<p></p>
 
 <h2 id="code">Code</h2>
 <div class="highlight"><div class="chroma">
@@ -114,27 +112,27 @@
 	<span class="s">&#34;net&#34;</span>
 <span class="p">)</span>
 
-<span class="kd">func</span> <span class="nx">main</span><span class="p">()</span> <span class="p">{</span>
-	<span class="nx">ifs</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Interfaces</span><span class="p">()</span>
-	<span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&#34;Looking up ips...&#34;</span><span class="p">)</span>
+<span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+	<span class="nx">ifs</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Interfaces</span><span class="p">()</span>
+	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Looking up ips...&#34;</span><span class="p">)</span>
 	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+		<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
 	<span class="p">}</span>
 
 	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ief</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">ifs</span> <span class="p">{</span>
-		<span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="nx">ief</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
-		<span class="nx">addrs</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ief</span><span class="p">.</span><span class="nx">Addrs</span><span class="p">()</span>
+		<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">ief</span><span class="p">.</span><span class="nx">Name</span><span class="p">)</span>
+		<span class="nx">addrs</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">ief</span><span class="p">.</span><span class="nf">Addrs</span><span class="p">()</span>
 
 		<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
-			<span class="nx">log</span><span class="p">.</span><span class="nx">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
+			<span class="nx">log</span><span class="p">.</span><span class="nf">Fatal</span><span class="p">(</span><span class="nx">err</span><span class="p">)</span>
 		<span class="p">}</span>
 
 		<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">addr</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">addrs</span> <span class="p">{</span>
 			<span class="c1">// if addr.isLookback
-</span><span class="c1"></span>			<span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&#34;- &#34;</span> <span class="o">+</span> <span class="nx">addr</span><span class="p">.</span><span class="nx">String</span><span class="p">())</span>
+</span><span class="c1"></span>			<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;- &#34;</span> <span class="o">+</span> <span class="nx">addr</span><span class="p">.</span><span class="nf">String</span><span class="p">())</span>
 		<span class="p">}</span>
 	<span class="p">}</span>
-	<span class="nx">log</span><span class="p">.</span><span class="nx">Println</span><span class="p">(</span><span class="s">&#34;Done.&#34;</span><span class="p">)</span>
+	<span class="nx">log</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Done.&#34;</span><span class="p">)</span>
 <span class="p">}</span></code></pre></td></tr></table>
 </div>
 </div>

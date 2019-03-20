@@ -37,7 +37,7 @@
 
     
 
-    <meta name="generator" content="Hugo 0.47.1" />
+    <meta name="generator" content="Hugo 0.54.0" />
   </head>
 
   <body>
@@ -71,8 +71,6 @@
 
     <p>Cut out summary from your post content here.</p>
 
-<p></p>
-
 <p>The remaining content of your post.</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -99,20 +97,20 @@
 </span><span class="lnt">21
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nx">InterfaceByIP</span><span class="p">(</span><span class="nx">ip</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">net</span><span class="p">.</span><span class="nx">Interface</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
+<pre class="chroma"><code class="language-golang" data-lang="golang"><span class="kd">func</span> <span class="nf">InterfaceByIP</span><span class="p">(</span><span class="nx">ip</span> <span class="kt">string</span><span class="p">)</span> <span class="p">(</span><span class="o">*</span><span class="nx">net</span><span class="p">.</span><span class="nx">Interface</span><span class="p">,</span> <span class="kt">error</span><span class="p">)</span> <span class="p">{</span>
 	<span class="k">if</span> <span class="nx">ip</span> <span class="o">==</span> <span class="s">&#34;&#34;</span> <span class="p">{</span>
     <span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">net</span><span class="p">.</span><span class="nx">OpError</span><span class="p">{</span><span class="nx">Op</span><span class="p">:</span> <span class="s">&#34;route&#34;</span><span class="p">,</span> <span class="nx">Net</span><span class="p">:</span> <span class="s">&#34;ip+net&#34;</span><span class="p">,</span>
                 <span class="nx">Source</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">Addr</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">Err</span><span class="p">:</span> <span class="nx">ErrInvalidInterfaceIP</span><span class="p">}</span>
 	<span class="p">}</span>
 
-	<span class="nx">ift</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nx">Interfaces</span><span class="p">()</span>
+	<span class="nx">ift</span><span class="p">,</span> <span class="nx">err</span> <span class="o">:=</span> <span class="nx">net</span><span class="p">.</span><span class="nf">Interfaces</span><span class="p">()</span>
 	<span class="k">if</span> <span class="nx">err</span> <span class="o">!=</span> <span class="kc">nil</span> <span class="p">{</span>
 		<span class="k">return</span> <span class="kc">nil</span><span class="p">,</span> <span class="o">&amp;</span><span class="nx">net</span><span class="p">.</span><span class="nx">OpError</span><span class="p">{</span><span class="nx">Op</span><span class="p">:</span> <span class="s">&#34;route&#34;</span><span class="p">,</span> <span class="nx">Net</span><span class="p">:</span> <span class="s">&#34;ip+net&#34;</span><span class="p">,</span> <span class="nx">Source</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">Addr</span><span class="p">:</span> <span class="kc">nil</span><span class="p">,</span> <span class="nx">Err</span><span class="p">:</span> <span class="nx">err</span><span class="p">}</span>
 	<span class="p">}</span>
 	<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">ifi</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">ift</span> <span class="p">{</span>
-		<span class="nx">addrs</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ifi</span><span class="p">.</span><span class="nx">Addrs</span><span class="p">()</span>
+		<span class="nx">addrs</span><span class="p">,</span> <span class="nx">_</span> <span class="o">:=</span> <span class="nx">ifi</span><span class="p">.</span><span class="nf">Addrs</span><span class="p">()</span>
 		<span class="k">for</span> <span class="nx">_</span><span class="p">,</span> <span class="nx">addr</span> <span class="o">:=</span> <span class="k">range</span> <span class="nx">addrs</span> <span class="p">{</span>
-			<span class="k">if</span> <span class="nx">ip</span> <span class="o">==</span> <span class="nx">addr</span><span class="p">.</span><span class="nx">String</span><span class="p">()</span> <span class="p">{</span>
+			<span class="k">if</span> <span class="nx">ip</span> <span class="o">==</span> <span class="nx">addr</span><span class="p">.</span><span class="nf">String</span><span class="p">()</span> <span class="p">{</span>
 				<span class="k">return</span> <span class="o">&amp;</span><span class="nx">ifi</span><span class="p">,</span> <span class="kc">nil</span>
 			<span class="p">}</span>
 		<span class="p">}</span>
